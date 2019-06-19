@@ -1,3 +1,5 @@
+This project started as a walkthrough of the ["Build a todo app in react with firebase and redux" tutorial](https://blog.bitsrc.io/building-a-todo-app-in-react-with-firebase-and-redux-ba3ab53a671b) by [Rajat S](https://gist.github.com/rajatk16).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
