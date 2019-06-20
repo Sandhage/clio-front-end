@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { removeRelease } from '../actions';
 
 class ListItem extends Component {
-  handleRemove = removeRelease => {
-    const { removeRelease } = this.props;
-    removeRelease(removeRelease);
+  handleRemove = data => {
+    const { removeItem } = this.props;
+    removeRelease(removeItem);
   };
 
   render() {
@@ -14,10 +14,10 @@ class ListItem extends Component {
       <div key="releaseName">
         <h4>
           {release.title}
-          <span onClick={() => this.handleRemove(releaseId)}>
-            <i>Remove</i>
-          </span>
         </h4>
+        <button onClick={() => this.handleRemove(releaseId)}>
+          <i>Remove</i>
+        </button>
       </div>
     );
   }

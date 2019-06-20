@@ -1,4 +1,4 @@
-import { FETCH_RELEASES } from '../actions/types';
+import { FETCH_RELEASES } from '../actions/index';
 
 export default (state = {}, action) => {
   switch(action.type) {

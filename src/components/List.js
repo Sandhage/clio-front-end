@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 import * as actions from '../actions';
 import ListItem from './ListItem';
 
@@ -10,11 +11,11 @@ class List extends Component {
   };
 
   inputChange = e => {
-    this.setState({addFormValue: e.target.value});
+    this.setState({formValue: e.target.value});
   };
 
   formSubmit = e => {
-    const { FormValue } = this.state,
+    const { formValue } = this.state,
           { addRelease } = this.props;
 
     e.preventDefault();
@@ -32,7 +33,7 @@ class List extends Component {
           <form onSubmit={this.formSubmit}>
             <div>
               <i>Add</i>
-              <input type="text" id="newRelease" value={formValue} onChange={this.inputChange} />
+              <input id="newRelease" value={formValue} onChange={this.inputChange} />
               <label htmlFor="newRelease">What next?</label>
             </div>
           </form>
@@ -43,7 +44,7 @@ class List extends Component {
 
   renderRelease() {
     const { data } = this.props,
-          releases = data.map((value, key) => {
+          releases = _.map(data, (value, key) => {
             return <ListItem key={key} releaseId={key} release={value} />
           });
 
